@@ -1,7 +1,9 @@
 # Comments
 
 ### Design choices
-- Shopping carts will be associated to the **session id** (which is used as the primary key)
+- Opted to use Django; since I have most experience with this framework and it is a common out-of-the-box-complete solution which supports scalability, security features and quick setup. It is capable of producing production-ready apps.
+- Opted to use Celery; since this is a standard tool for asynchronous task processing and integrates well with Django.
+- To get as close to real world use as possible, shopping carts will be associated to the **session id** (which is used as the primary key)
 - Celery task is set up to handle the (slow) external reservation calls, without hindering the endpoint response time
 - The API returns a placeholder reservation id `<reservation-in-progress>` for reservations that are still in progress
 - If external reserve call fails, the item is auto-deleted from the cart in the background
