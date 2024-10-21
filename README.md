@@ -34,14 +34,14 @@
 - Start celery: e.g. `celery -A unnamedproject worker --loglevel=info`
 - Run migrations: e.g. `python3 manage.py migrate`
 - Run Django project: e.g. `python3 manage.py runserver`
-- Create admin superuser to examine the db: e.g. `python3 manage.py createsuperuser`
+- Create admin superuser to examine the db: e.g. `python3 manage.py createsuperuser` or use existing one (`admin`, pw `admin`)
 - Access the db: `http://127.0.0.1:8000/admin/`
 - Call the endpoint: 
     ```
     curl -X POST http://127.0.0.1:8000/shopping/items/ \
     -H "Content-Type: application/json" \
     -H "Cookie: sessionid=test-session-id" \
-    -d '{"name": "dog", "quantity": 2}
+    -d '{"name": "dog", "quantity": 2}'
     ```
 
 ### Tests
@@ -50,6 +50,7 @@
 ### Frontend
 - `cd frontend`
 - `npm start`
+- Access the frontend `http://localhost:3000/`
 
 
 # Prerequisities
